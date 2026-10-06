@@ -5,6 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 An [OpenCode](https://opencode.ai) plugin to query account quota usage for multiple AI platforms.
+This version uses the OpenCode 2 plugin API.
 
 [中文文档](./README.zh-CN.md)
 
@@ -35,14 +36,14 @@ Install the opencode-mystatus plugin by following: https://raw.githubusercontent
 
 To install this plugin, perform these steps:
 
-1. Add `"opencode-mystatus"` to the `plugin` array in `~/.config/opencode/opencode.json`
+1. Add `"opencode-mystatus"` to the `plugins` array in `~/.config/opencode/opencode.json`
 
-2. Add the slash command to the `command` object in the same file:
+2. Add the slash command to the `commands` object in the same file:
 
 ```json
 {
-  "plugin": ["opencode-mystatus"],
-  "command": {
+  "plugins": ["opencode-mystatus"],
+  "commands": {
     "mystatus": {
       "description": "Query quota usage for all AI accounts",
       "template": "Use the mystatus tool to query quota usage. Return the result as-is without modification."
@@ -61,8 +62,8 @@ To install this plugin, perform these steps:
 
 ```json
 {
-  "plugin": ["opencode-mystatus"],
-  "command": {
+  "plugins": ["opencode-mystatus"],
+  "commands": {
     "mystatus": {
       "description": "Query quota usage for all AI accounts",
       "template": "Use the mystatus tool to query quota usage. Return the result as-is without modification."
@@ -75,10 +76,10 @@ To install this plugin, perform these steps:
 
 ### From Local Files
 
-Copy the plugin files to your OpenCode config directory:
+Copy the plugin files into your project's OpenCode plugin directory:
 
-1. Copy `plugin/mystatus.ts` and `plugin/lib/` to `~/.config/opencode/plugin/`
-2. Copy `command/mystatus.md` to `~/.config/opencode/command/`
+1. Copy `plugin/mystatus.ts` and `plugin/lib/` to `.opencode/plugins/`
+2. Copy `command/mystatus.md` to `.opencode/commands/`
 3. Restart OpenCode
 
 ## Usage

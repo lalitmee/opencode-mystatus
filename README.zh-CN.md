@@ -5,6 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 [OpenCode](https://opencode.ai) 插件，用于查询多个 AI 平台的账号额度使用情况。
+此版本使用 OpenCode 2 插件 API。
 
 [English](./README.md)
 
@@ -35,14 +36,14 @@ Install the opencode-mystatus plugin by following: https://raw.githubusercontent
 
 安装此插件需要执行以下步骤：
 
-1. 在 `~/.config/opencode/opencode.json` 的 `plugin` 数组中添加 `"opencode-mystatus"`
+1. 在 `~/.config/opencode/opencode.json` 的 `plugins` 数组中添加 `"opencode-mystatus"`
 
-2. 在同一文件的 `command` 对象中添加斜杠命令：
+2. 在同一文件的 `commands` 对象中添加斜杠命令：
 
 ```json
 {
-  "plugin": ["opencode-mystatus"],
-  "command": {
+  "plugins": ["opencode-mystatus"],
+  "commands": {
     "mystatus": {
       "description": "Query quota usage for all AI accounts",
       "template": "Use the mystatus tool to query quota usage. Return the result as-is without modification."
@@ -61,8 +62,8 @@ Install the opencode-mystatus plugin by following: https://raw.githubusercontent
 
 ```json
 {
-  "plugin": ["opencode-mystatus"],
-  "command": {
+  "plugins": ["opencode-mystatus"],
+  "commands": {
     "mystatus": {
       "description": "Query quota usage for all AI accounts",
       "template": "Use the mystatus tool to query quota usage. Return the result as-is without modification."
@@ -75,10 +76,10 @@ Install the opencode-mystatus plugin by following: https://raw.githubusercontent
 
 ### 从本地文件安装
 
-将插件文件复制到 OpenCode 配置目录：
+将插件文件复制到项目的 OpenCode 插件目录：
 
-1. 将 `plugin/mystatus.ts` 和 `plugin/lib/` 复制到 `~/.config/opencode/plugin/`
-2. 将 `command/mystatus.md` 复制到 `~/.config/opencode/command/`
+1. 将 `plugin/mystatus.ts` 和 `plugin/lib/` 复制到 `.opencode/plugins/`
+2. 将 `command/mystatus.md` 复制到 `.opencode/commands/`
 3. 重启 OpenCode
 
 ## 使用方法
